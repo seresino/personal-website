@@ -3,12 +3,12 @@ import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export const client = createClient({
-  // Remember to use environment variables in a real project!
-  // projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  projectId: "dlpmtshq",
+  // --- THIS IS THE KEY CHANGE ---
+  // It reads the variable from your .env.local file
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
   dataset: "production",
   useCdn: true,
-  apiVersion: "2025-09-23",
+  apiVersion: "2023-05-03",
 });
 
 const builder = imageUrlBuilder(client);

@@ -30,6 +30,7 @@ export const MobileSidebar = () => {
         <SheetContent
           side="left"
           className="bg-transparent border-none text-white w-64 p-4 flex flex-col overflow-y-auto no-scrollbar [&>button.absolute]:hidden"
+          aria-describedby={undefined}
         >
           <SheetHeader>
             <SheetTitle>

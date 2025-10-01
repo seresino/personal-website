@@ -25,7 +25,7 @@ export const NavContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   const filmProjects = projects.filter((p) => p.projectType === "film");
   const codeProjects = projects.filter((p) => p.projectType === "code");
 
-  const cardClassName = "rounded-md bg-black/50 border-white/50 text-white";
+  const cardClassName = "rounded-md bg-black border-white/50 text-white";
 
   return (
     <nav className="flex flex-col min-h-full space-y-2 py-4">
