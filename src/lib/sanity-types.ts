@@ -17,7 +17,18 @@ export interface About {
   instagram: string;
 }
 
-// UPDATED Project interface to match your schema
+// A new type for our gallery images, which include a caption
+export interface GalleryImage extends SanityImage {
+  caption?: string;
+}
+
+// A new type for our video objects
+export interface ProjectVideo {
+  _type: "video";
+  url: string;
+  caption?: string;
+}
+
 export interface Project {
   _id: string;
   title: string;
@@ -26,5 +37,7 @@ export interface Project {
   };
   projectType: "film" | "code";
   coverImage: SanityImage;
-  content: any[]; // This will hold the Portable Text content
+  content: any[]; // Portable Text content
+  videos?: ProjectVideo[]; // <-- NEW: Array of videos
+  gallery?: GalleryImage[]; // <-- NEW: Array of gallery images
 }

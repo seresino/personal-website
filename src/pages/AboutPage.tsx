@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { client, aboutQuery, urlFor } from "@/lib/sanity";
 import type { About } from "@/lib/sanity-types";
+import { Mail, Instagram } from "lucide-react";
 
 export default function AboutPage() {
   const [about, setAbout] = useState<About | null>(null);
@@ -47,7 +48,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 md:px-8">
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-xl">
         {profileImageUrl && (
           <div className="mb-6 md:mb-8">
             <img
@@ -58,11 +59,11 @@ export default function AboutPage() {
           </div>
         )}
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-6 md:mb-8 text-white text-balance">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 md:mb-8 text-white text-balance">
           {about.title}
         </h1>
 
-        <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-white/80">
+        <div className="md:space-y-2 md:text-lg text-white/90 text-sm">
           {about.content.split("\n\n").map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
@@ -73,7 +74,7 @@ export default function AboutPage() {
             href={`mailto:${about.email}`}
             className="text-white/70 hover:text-white transition-colors underline"
           >
-            Get in touch
+            <Mail />
           </a>
           {about.instagram && (
             <a
@@ -82,7 +83,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="text-white/70 hover:text-white transition-colors underline"
             >
-              Follow on Instagram
+              <Instagram />
             </a>
           )}
         </div>

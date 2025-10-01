@@ -1,18 +1,16 @@
-// sanity-studio/schemaTypes/project.ts
-
-import {defineType} from 'sanity'
+import {defineType, defineField} from 'sanity'
 
 export default defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -20,8 +18,8 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'projectType',
       title: 'Project Type',
       type: 'string',
@@ -32,23 +30,82 @@ export default defineType({
         ],
         layout: 'radio',
       },
-    },
-    {
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
       options: {
         hotspot: true,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'content',
-      title: 'Content',
+      title: 'Main Content (Portable Text)',
       type: 'array',
       of: [
-        {type: 'block'}, // For rich text (paragraphs, headings, etc.)
-        {type: 'image'}, // For additional images within the project page
+        {type: 'block'},
+        {
+          type: 'image', // Allows adding images directly within the text
+          options: {hotspot: true},
+        },
       ],
-    },
+    }),
+
+    // --- NEW: Videos Field ---
+    defineField({
+      name: 'videos',
+      title: 'Vimeo Videos',
+      type: 'array',
+      description: 'Add one or more Vimeo video links.',
+      of: [
+        {
+          type: 'object',
+          name: 'video',
+          title: 'Video',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'Vimeo URL',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+            },
+          ],
+        },
+      ],
+    }),
+
+    // --- NEW: Photo Gallery Field ---
+    defineField({
+      name: 'gallery',
+      title: 'Photo Gallery',
+      type: 'array',
+      description: 'Upload images for a gallery display.',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+            },
+          ],
+        },
+      ],
+    }),
   ],
 })

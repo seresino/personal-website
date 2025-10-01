@@ -31,7 +31,9 @@ export const projectBySlugQuery = `*[_type == "project" && slug.current == $slug
   slug,
   projectType,
   coverImage,
-  content
+  content,
+  videos[],
+  gallery[]
 }`;
 
 // This query for the About page is still correct
