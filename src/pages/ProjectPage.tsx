@@ -60,7 +60,7 @@ export default function ProjectPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center text-white">
+      <div className="min-h-dvh bg-black flex items-center justify-center text-white">
         Loading project...
       </div>
     );
@@ -69,7 +69,7 @@ export default function ProjectPage() {
   if (!project) {
     // This will show briefly before the navigate('/404') kicks in if a project is not found.
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center text-white">
+      <div className="min-h-dvh bg-black flex items-center justify-center text-white">
         Project not found.
       </div>
     );
@@ -82,7 +82,7 @@ export default function ProjectPage() {
   return (
     <div>
       {/* Header Image Section */}
-      <div className="relative h-screen">
+      <div className="relative h-dvh">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${headerImageUrl})` }}

@@ -46,7 +46,7 @@ export default function HomePage() {
               key={project._id}
               to={`/${project.projectType}/${project.slug.current}`}
               // The `snap-start` class on the direct children now works perfectly.
-              className="block relative h-screen w-full cursor-pointer snap-start"
+              className="block relative h-dvh w-full cursor-pointer snap-start"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
