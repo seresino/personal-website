@@ -1,14 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { NavContent } from "@/components/NavContent";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 export const MobileSidebar = () => {
