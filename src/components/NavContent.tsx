@@ -29,10 +29,16 @@ export const NavContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
 
   return (
     <nav className="flex flex-col min-h-full space-y-2 py-4">
+      <Link
+        to="/"
+        className="text-white text-2xl text-left pl-2 font-bold mb-4 block hover:italic transition-colors"
+      >
+        ruby seresin
+      </Link>
       {filmProjects.length > 0 && (
         <Card className={cardClassName}>
           <CardContent>
-            <h3 className="font-medium text-sm tracking-wide">Film</h3>
+            <h3 className="font-medium text-sm tracking-wide">film</h3>
             <Separator className="my-2 bg-white" />
             <ul className="space-y-1.5">
               {filmProjects.map((project) => (
@@ -58,7 +64,7 @@ export const NavContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
       {codeProjects.length > 0 && (
         <Card className={cardClassName}>
           <CardContent>
-            <h3 className="font-medium text-sm tracking-wide">Code</h3>
+            <h3 className="font-medium text-sm tracking-wide">code</h3>
             <Separator className="my-2 bg-white" />
             <ul className="space-y-1.5">
               {codeProjects.map((project) => (
@@ -93,21 +99,30 @@ export const NavContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
             )}
             onClick={onLinkClick}
           >
-            About
+            about
           </Link>
-          <a
-            href="mailto:ruby.seresin@gmail.com"
-            className="block text-sm text-white hover:italic transition-colors"
-          >
-            Email
-          </a>
+
           <a
             href="https://instagram.com/rubyseresin"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-sm text-white hover:italic transition-colors"
           >
-            Instagram
+            instagram
+          </a>
+          <a
+            href="https://vimeo.com/rubyseresin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-sm text-white hover:italic transition-colors"
+          >
+            vimeo
+          </a>
+          <a
+            href="mailto:ruby.seresin@gmail.com"
+            className="block text-sm text-white hover:italic transition-colors"
+          >
+            email
           </a>
         </CardContent>
       </Card>

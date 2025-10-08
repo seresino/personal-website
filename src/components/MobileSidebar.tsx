@@ -29,21 +29,10 @@ export const MobileSidebar = () => {
         </SheetTrigger>
         <SheetContent
           side="left"
-          className="bg-transparent border-none text-white w-64 p-4 flex flex-col overflow-y-auto no-scrollbar [&>button.absolute]:hidden"
+          className="bg-transparent border-none text-white w-64 px-4 flex flex-col overflow-y-auto no-scrollbar [&>button.absolute]:hidden"
           aria-describedby={undefined}
         >
-          <SheetHeader>
-            <SheetTitle>
-              <Link
-                to="/"
-                className="text-white text-2xl text-center font-semibold block hover:italic transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                RUBY SERESIN
-              </Link>
-            </SheetTitle>
-          </SheetHeader>
-          <div className="flex-1 min-h-dvh">
+          <div className="flex-col min-h-dvh">
             <NavContent onLinkClick={() => setIsMobileMenuOpen(false)} />
           </div>
         </SheetContent>
